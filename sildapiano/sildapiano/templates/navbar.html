@@ -1,0 +1,8 @@
+<div>
+    {% url 'lessons' as lessons_url%}
+    <span>{% if request.path == lessons_url %}Sākums{% else %}<a href={% url 'lessons' %}>Sākums</a>{% endif %}</span>
+    {% url 'about' as about_url%}
+    <span>{% if request.path == about_url %}Par skolotāju{% else %}<a href={% url 'about' %}>Par skolotāju</a>{% endif %}</span>
+    {% url 'contacts' as contacts_url%}
+    <span>{% if request.path == contacts_url %}Kontakti{% else %}<a href={% url 'contacts' %}>Kontakti</a>{% endif %}</span>
+</div>

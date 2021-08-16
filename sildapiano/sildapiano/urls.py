@@ -17,9 +17,12 @@ from django.contrib import admin
 from django.urls import path
 from django.views.generic.base import TemplateView
 
-from sildapiano import views
+from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', TemplateView.as_view(template_name="homepage.html"), name="homepage"),
+    path('lessons/', views.lessons_page, name="lessons"),
+    path('lessons/contacts/', views.contacts, name="contacts"),
+    path('lessons/about/', views.about, name="about")
 ]
