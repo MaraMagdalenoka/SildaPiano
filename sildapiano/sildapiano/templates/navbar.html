@@ -1,4 +1,5 @@
 <div class="topnav">
+    <span style="margin-right:150px">SildaPiano</span>
     {% url 'lessons' as lessons_url%}
     <span>{% if request.path == lessons_url %}Sākums{% else %}<a href={% url 'lessons' %}>Sākums</a>{% endif %}</span>
     {% url 'about' as about_url%}
