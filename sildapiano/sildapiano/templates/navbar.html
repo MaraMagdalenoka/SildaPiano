@@ -1,8 +1,19 @@
-<div>
+<div class="topnav">
     {% url 'lessons' as lessons_url%}
     <span>{% if request.path == lessons_url %}Sākums{% else %}<a href={% url 'lessons' %}>Sākums</a>{% endif %}</span>
     {% url 'about' as about_url%}
     <span>{% if request.path == about_url %}Par skolotāju{% else %}<a href={% url 'about' %}>Par skolotāju</a>{% endif %}</span>
     {% url 'contacts' as contacts_url%}
     <span>{% if request.path == contacts_url %}Kontakti{% else %}<a href={% url 'contacts' %}>Kontakti</a>{% endif %}</span>
+    <span style="float:right">
+        {% if user.is_authenticated %}
+            {% url 'profile' as profile_url %}
+            <span>Čau,
+                {% if request.path == profile_url %}{{user.username}}
+                {% else %}<a href="{{ profile_url }}">{{user.username}}</a>!{% endif %}</span>
+            <span><a href="{% url 'logout' %}">Iziet</a></span>
+        {% else %}
+            <span><a href="{% url 'login' %}">Ienākt</a></span>
+        {% endif %}
+    </span>
 </div>

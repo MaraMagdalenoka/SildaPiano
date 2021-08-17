@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<body>
+{% include 'navbar.html' %}
+<h1>Ienākt</h1>
+<form method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit">Ienākt</button>
+</form>
+
+</body>
+
+{% endblock %}

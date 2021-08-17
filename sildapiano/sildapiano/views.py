@@ -1,5 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render
+from django.views.generic.base import TemplateView
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 def homepage(request):
     return render(request, './homepage.html')
@@ -12,3 +14,6 @@ def contacts(request):
 
 def about(request):
     return render(request, './about.html')
+
+class ProfileView(LoginRequiredMixin, TemplateView):
+    template_name = 'account/profile.html'

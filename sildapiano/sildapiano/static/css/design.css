@@ -1,0 +1,15 @@
+*{
+    background-color: #b1c5d4;
+}
+
+.btn1{
+
+    height: 200px;
+    width: 300px;
+    font-size: 50px;
+    background-color: #686573;
+    color: #d8b9aa;
+    border: none;
+    text-align: center;
+    border-radius: 12px;
+}
