@@ -1,5 +1,9 @@
-*{
+body{
+    padding:0px;
+    margin:0px;
     background-color: #b1c5d4;
+    list-style: none;
+    box-sizing: border-box;
 }
 
 .btn1{
@@ -12,4 +16,43 @@
     border: none;
     text-align: center;
     border-radius: 12px;
+}
+
+.nav {
+    color: white;
+    background: #d8b9aa;
+    width: 100%;
+}
+
+label.logo {
+    float:left;
+    text-size: 40px;
+}
+
+.middle ul{
+    list-style: none;
+    background: #d8b9aa;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+
+.middle li{
+    display:inline-block;
+}
+
+.middle a{
+    text-decoration:none;
+    color: white;
+    text-color: white;
+    width:100px;
+    display:block;
+    padding:15px;
+    font-size:17px;
+    transition: 0.5s;
+}
+
+.middle a:hover{
+    background: #686573;
+    transition: 0.5s;
 }
