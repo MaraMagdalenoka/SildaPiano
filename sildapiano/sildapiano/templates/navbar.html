@@ -1,22 +1,11 @@
-<body>
-
-{% load static %}
+<head>
+    {% load static %}
 <link rel="stylesheet" href="{% static 'css/design.css' %}">
+</head>
 
+<body>
 <div class="nav">
     <label class="logo">SildaPiano</label>
-
-    <span style="float:right">
-        {% if user.is_authenticated %}
-            {% url 'accounts:profile' as profile_url %}
-            <span>Čau,
-                {% if request.path == profile_url %}{{user.username}}
-                {% else %}<a href="{{ profile_url }}">{{user.username}}</a>!{% endif %}</span>
-            <span><a href="{% url 'accounts:logout' %}">Iziet</a></span>
-        {% else %}
-            <span><a href="{% url 'accounts:login' %}">Ienākt</a></span>
-        {% endif %}
-    </span>
 
     <div class="middle">
         <ul>
@@ -28,10 +17,18 @@
             <li>{% if request.path == contacts_url %}Kontakti{% else %}<a href={{ contacts_url }}>Kontakti</a>{% endif %}</li>
         </ul>
     </div>
-
-
-
-
-
+    <div class="right">
+        <ul>
+            {% if user.is_authenticated %}
+                {% url 'accounts:profile' as profile_url %}
+                <li>Čau,
+                    {% if request.path == profile_url %}{{user.username}}
+                    {% else %}<a href="{{ profile_url }}">{{user.username}}</a>!{% endif %}</li>
+                <li><a href="{% url 'accounts:logout' %}">Iziet</a></li>
+            {% else %}
+                <li><a href="{% url 'accounts:login' %}">Ienākt</a></li>
+            {% endif %}
+        </ul>
+    </div>
 </div>
 </body>
