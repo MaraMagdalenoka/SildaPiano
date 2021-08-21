@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.views.generic.base import TemplateView
 from django.contrib.auth.mixins import LoginRequiredMixin
+from .models import *
 
 
 def homepage(request):
@@ -29,3 +30,8 @@ def catalogue(request):
 
 class ProfileView(LoginRequiredMixin, TemplateView):
     template_name = "account/profile.html"
+
+
+def lesson_plans(request):
+    lessons_info = LessonPlans.objects.all()
+    return render(request, "templates/catalogue.html", {"lessons_info": lessons_info})
