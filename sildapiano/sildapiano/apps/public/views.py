@@ -1,5 +1,6 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.views.generic.base import TemplateView
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 def homepage(request):
@@ -17,5 +18,10 @@ def contacts(request):
 def about(request):
     return render(request, "./about.html")
 
+
 def calendar(request):
     return render(request, "./calendar.html")
+
+
+class ProfileView(LoginRequiredMixin, TemplateView):
+    template_name = "account/profile.html"
