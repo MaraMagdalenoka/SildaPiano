@@ -17,6 +17,8 @@
             <li>{% if request.path == contacts_url %}Kontakti{% else %}<a href="{{ contacts_url }}">Kontakti</a>{% endif %}</li>
             {% url 'public:calendar' as calendar_url%}
             <li>{% if request.path == calendar_url %}Kalendārs{% else %}<a href="{{ calendar_url }}">Kalendārs</a>{% endif %}</li>
+            {% url 'public:catalogue' as catalogue_url%}
+            <li>{% if request.path == catalogue_url %}Katalogs{% else %}<a href="{{ catalogue_url }}">Katalogs</a>{% endif %}</li>
         </ul>
     </div>
     <div class="right">

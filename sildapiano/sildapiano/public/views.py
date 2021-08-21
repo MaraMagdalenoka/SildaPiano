@@ -23,5 +23,9 @@ def calendar(request):
     return render(request, "./calendar.html")
 
 
+def catalogue(request):
+    return render(request, "./catalogue.html")
+
+
 class ProfileView(LoginRequiredMixin, TemplateView):
     template_name = "account/profile.html"
