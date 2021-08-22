@@ -3,20 +3,13 @@
 {% block content %}
 <body>
     <h1 style="text-align:center">Nodarbības</h1>
-    <h1 style="text-align:center">{{ lessons_info }}</h1>
 
 
-{% for product in lessons_info %}
-<div class="card" style="width: 18rem;">
-    <h5 class="card-title">{{ product.lesson_name }}</h5>
-    <p class="card-text">{{ product.description }}</p>
-    <p class="card-text">Price - {{ product.price_for_all }}</p>
-    <a href="#" class="btn btn-primary">Pieteikties</a>
-  </div>
-</div>
+{% for lesson in lessons_info %}
+    <li>{{lesson.lesson_name }}</li>
+    <li>Apraksts: {{lesson.description }}</li>
+    <li>Cena: {{lesson.price_for_all }}</li>
 {% endfor %}
-
-
 
 </body>
 

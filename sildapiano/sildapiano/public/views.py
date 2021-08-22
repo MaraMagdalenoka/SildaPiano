@@ -32,6 +32,6 @@ class ProfileView(LoginRequiredMixin, TemplateView):
     template_name = "account/profile.html"
 
 
-def lesson_plans(request):
+def lesson_info(request):
     lessons_info = LessonPlans.objects.all()
-    return render(request, "templates/catalogue.html", {"lessons_info": lessons_info})
+    return render(request, "./catalogue.html", {"lessons_info": lessons_info})
