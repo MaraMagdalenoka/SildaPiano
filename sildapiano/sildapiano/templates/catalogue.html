@@ -6,10 +6,13 @@
 
 
 {% for lesson in lessons_info %}
-    <li>{{lesson.lesson_name }}</li>
+    <ul>
+    <li><strong>{{lesson.lesson_name }}</strong></li>
     <li>Apraksts: {{lesson.description }}</li>
     <li>Cena: {{lesson.price_for_all }}</li>
-{% endfor %}
+
+    </ul>
+    {% endfor %}
 
 </body>
 

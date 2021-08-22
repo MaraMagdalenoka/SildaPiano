@@ -10,7 +10,7 @@ urlpatterns = [
     path("lessons/contacts/", views.contacts, name="contacts"),
     path("lessons/about/", views.about, name="about"),
     path("lessons/calendar", views.calendar, name="calendar"),
-    path("lessons/catalogue", views.catalogue, name="catalogue"),
+    path("lessons/catalogue", views.lesson_info, name="lesson_info"),
     path("profile/", views.ProfileView.as_view(template_name="accounts/profile.html"), name="profile"),
     path("login/", auth_views.LoginView.as_view(template_name="accounts/login.html"), name="login"),
     path("logout/", auth_views.LogoutView.as_view(), name="logout"),
