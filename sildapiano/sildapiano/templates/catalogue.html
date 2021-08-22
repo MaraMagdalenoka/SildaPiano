@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<body>
+    <h1 style="text-align:center">Nodarbības</h1>
+
+{% for lesson in lessons_info %}
+    <div class="card">
+  <div class="card-body">
+    <h2 class="card-title"><strong>{{lesson.lesson_name }}</strong></h2>
+    <p class="card-text">
+      <li>{{lesson.description }}</li>
+      <li>Cena: {{lesson.price_for_all }} EUR</li>
+      </p>
+    <a href="#" class="btn btn-primary">Pasūtīt</a>
+  </div>
+</div>
+
+    {% endfor %}
+
+</body>
+
+{% endblock %}

@@ -7,6 +7,10 @@
     <link rel="stylesheet" href="{% static 'css/design.css' %}">
 </head>
 <body>
+    {% url 'public:homepage' as homepage_url%}
+    {% if request.path != homepage_url %}
+    {% include 'navbar.html' %}
+    {% endif %}
     <main>
         {% block content %}
         {% endblock %}

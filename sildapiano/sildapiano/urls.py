@@ -22,7 +22,7 @@ from django.contrib.auth import views as auth_views
 from . import views
 
 urlpatterns = [
-    path("", include('sildapiano.apps.public.urls')),
+    path("", include("sildapiano.public.urls")),
     path("admin/", admin.site.urls),
-    path("accounts/", include('sildapiano.apps.accounts.urls')),
+    path("accounts/", include("sildapiano.public.urls")),
 ]

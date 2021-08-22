@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<body>
+    <h1 style="text-align:center">Pieejamie nodarbību laiki</h1>
+</body>
+<link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.9.0/main.min.css"/>
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.9.0/main.min.js"></script>
+
+
+<div id='calendar'></div>
+<script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var calendarEl = document.getElementById('calendar');
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+          initialView: 'dayGridMonth'
+        });
+        calendar.render();
+      });
+    </script>
+{% endblock %}

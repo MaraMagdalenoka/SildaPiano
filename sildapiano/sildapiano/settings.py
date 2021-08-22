@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "sildapiano.public",
 ]
 
 MIDDLEWARE = [
@@ -106,7 +107,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = "en-us"
 
-TIME_ZONE = "UTC"
+TIME_ZONE = "Europe/Riga"
 
 USE_I18N = True
 
@@ -126,6 +127,6 @@ STATICFILES_DIRS = (os.path.join(PROJECT_DIR, "static"),)
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-LOGIN_URL = "accounts:login"
-LOGIN_REDIRECT_URL = "accounts:profile"
+LOGIN_URL = "public:login"
+LOGIN_REDIRECT_URL = "public:profile"
 LOGOUT_REDIRECT_URL = "public:lessons"
