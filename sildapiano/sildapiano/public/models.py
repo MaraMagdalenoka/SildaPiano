@@ -11,8 +11,8 @@ class UserProfile(models.Model):
     last_name = models.CharField(max_length=100)
     email = models.EmailField(max_length=110)
     phone_num = models.CharField(max_length=100)
-    birth_date = models.DateField(blank=True)
-    description = models.CharField(max_length=1000, blank=True)
+    birth_date = models.DateField(blank=True, null=True)
+    description = models.CharField(max_length=1000, blank=True, null=True)
 
 
 @receiver(post_save, sender=User)
@@ -28,3 +28,11 @@ class LessonPlans(models.Model):
     description = models.CharField(max_length=300)
     number_of_lessons = models.IntegerField(null=False)
     price_for_all = models.FloatField()
+
+
+class Lessons(models.Model):
+    date = models.DateField(blank=False, null=True)
+    hour = models.TimeField(blank=False, null=True)
+    available = models.BooleanField(default=True)
+    taken_by = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
+    paid = models.BooleanField(default=False)
