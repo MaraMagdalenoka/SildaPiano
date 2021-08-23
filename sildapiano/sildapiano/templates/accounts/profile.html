@@ -2,14 +2,14 @@
 
 {% block content %}
 <body>
-<h1 style="text-align:center"> {{ user.username }} profils</h1>
+<h1 style="text-align:center"> {{ user.first_name }} profils</h1>
 <ul style="text-align:center">
     <li>Vārds, uzvārds: {{user.first_name}} {{user.last_name}}</li>
     <li>Lietotāja vārds: {{user.username}}</li>
-    <li>E-pasts: {{user.username}}</li>
-    <li>Telefona numurs: {{user.phone_num}}</li>
-    <li>Dzimšanas diena: {{user.birth_date}}</li>
-    <li>Raksturojums: {{user.description}}</li>
+    <li>E-pasts: {{user.email}}</li>
+    <li>Telefona numurs: {{user.profile.phone_num}}</li>
+    <li>Dzimšanas diena: {{user.profile.birth_date}}</li>
+    <li>Raksturojums: {{user.profile.description}}</li>
 </ul>
 </body>
 
