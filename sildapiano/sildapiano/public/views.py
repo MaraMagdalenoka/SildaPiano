@@ -23,7 +23,12 @@ def about(request):
     return render(request, "./about.html")
 
 
+# def calendar(request):
+#     return render(request, "./calendar.html")
+
+
 def calendar(request):
+    lessons = Lessons.objects.all()
     return render(request, "./calendar.html")
 
 

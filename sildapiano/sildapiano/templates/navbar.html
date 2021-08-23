@@ -5,10 +5,9 @@
 
 <body>
 <div class="nav">
-    <label class="logo">SildaPiano</label>
-
     <div class="middle">
         <ul>
+            <li class="logo"><a class="logo" style="font-size:23px;" >SildaPiano</a></li>
             {% url 'public:lessons' as lessons_url%}
             <li>{% if request.path == lessons_url %}Sākums{% else %}<a href="{{ lessons_url }}">Sākums</a>{% endif %}</li>
             {% url 'public:about' as about_url%}
@@ -19,19 +18,16 @@
             <li>{% if request.path == calendar_url %}Kalendārs{% else %}<a href="{{ calendar_url }}">Kalendārs</a>{% endif %}</li>
             {% url 'public:catalogue' as catalogue_url%}
             <li>{% if request.path == catalogue_url %}Katalogs{% else %}<a href="{{ catalogue_url }}">Katalogs</a>{% endif %}</li>
-        </ul>
-    </div>
-    <div class="right">
-        <ul>
-            {% if user.is_authenticated %}
+        {% if user.is_authenticated %}
                 {% url 'public:profile' as profile_url %}
-                <li>Hey,
-                    {% if request.path == profile_url %}{{user.first_name}}
-                    {% else %}<a href="{{ profile_url }}">{{user.first_name}}</a>!{% endif %}</li>
-                <li><a href="{% url 'public:logout' %}">Iziet</a></li>
+                <li style="float:right">
+                    {% if request.path == profile_url %}
+                    <a>{{user.username}}</a>
+                    {% else %}<a style="width:150px" href="{{ profile_url }}">{{user.username}}</a>{% endif %}</li>
+                <li style="float:right"><a href="{% url 'public:logout' %}">Iziet</a></li>
             {% else %}
-                <li><a href="{% url 'public:login' %}">Ienākt</a></li>
-                <li><a href="{% url 'public:signup' %}">Pieteikties</a></li>
+                <li style="float:right"><a href="{% url 'public:login' %}">Ienākt</a></li>
+                <li style="float:right"><a href="{% url 'public:signup' %}">Pieteikties</a></li>
             {% endif %}
         </ul>
     </div>

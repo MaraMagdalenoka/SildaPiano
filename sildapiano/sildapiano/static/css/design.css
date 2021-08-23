@@ -1,5 +1,6 @@
 # Homepage buttons
 .btn1{
+
     height: 200px;
     width: 300px;
     font-size: 50px;
@@ -17,6 +18,7 @@ body{
     background-color: #b1c5d4;
     list-style: none;
     box-sizing: border-box;
+
 }
 
 .nav {
@@ -25,9 +27,8 @@ body{
     width: 100%;
 }
 
-label.logo {
-    text-align: left;
-    text-size: 40px;
+li.logo{
+    float: left;
 }
 
 .middle ul{
@@ -53,35 +54,7 @@ label.logo {
     transition: 0.5s;
 }
 
-.middle a:hover{
-    background: #686573;
-    transition: 0.5s;
-}
-
-.right ul{
-    list-style: none;
-    background: #d8b9aa;
-    text-align: right;
-    padding: 0;
-    margin: 0;
-}
-
-.right li{
-    display:inline-block;
-}
-
-.right a{
-    text-decoration:none;
-    color: white;
-    text-color: white;
-    width:100px;
-    display:block;
-    padding:15px;
-    font-size:17px;
-    transition: 0.5s;
-}
-
-.right a:hover{
+.middle a:hover:not(.logo){
     background: #686573;
     transition: 0.5s;
 }
