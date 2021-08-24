@@ -13,6 +13,7 @@
 
 
 body{
+
     padding:0px;
     margin:0px;
     background-color: #b1c5d4;
@@ -29,18 +30,19 @@ body{
 
 li.logo{
     float: left;
+    font-weight: bold;
 }
 
 .middle ul{
     list-style: none;
     background: #d8b9aa;
-    text-align: center;
     padding: 0;
     margin: 0;
 }
 
 .middle li{
     display:inline-block;
+    text-align: center;
 }
 
 .middle a{

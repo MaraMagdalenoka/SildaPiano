@@ -7,17 +7,17 @@
 <div class="nav">
     <div class="middle">
         <ul>
-            <li class="logo"><a class="logo" style="font-size:23px;" >SildaPiano</a></li>
+            <li class="logo"><a class="logo" >SildaPiano</a></li>
             {% url 'public:lessons' as lessons_url%}
-            <li>{% if request.path == lessons_url %}Sākums{% else %}<a href="{{ lessons_url }}">Sākums</a>{% endif %}</li>
+            <li><a href="{{ lessons_url }}">Sākums</a></li>
             {% url 'public:about' as about_url%}
-            <li>{% if request.path == about_url %}Par skolotāju{% else %}<a href="{{ about_url }}">Par skolotāju</a>{% endif %}</li>
+            <li><a href="{{ about_url }}">Par skolotāju</a></li>
             {% url 'public:contacts' as contacts_url%}
-            <li>{% if request.path == contacts_url %}Kontakti{% else %}<a href="{{ contacts_url }}">Kontakti</a>{% endif %}</li>
+            <li><a href="{{ contacts_url }}">Kontakti</a></li>
             {% url 'public:calendar' as calendar_url%}
-            <li>{% if request.path == calendar_url %}Kalendārs{% else %}<a href="{{ calendar_url }}">Kalendārs</a>{% endif %}</li>
+            <li><a href="{{ calendar_url }}">Kalendārs</a></li>
             {% url 'public:catalogue' as catalogue_url%}
-            <li>{% if request.path == catalogue_url %}Katalogs{% else %}<a href="{{ catalogue_url }}">Katalogs</a>{% endif %}</li>
+            <li><a href="{{ catalogue_url }}">Katalogs</a></li>
         {% if user.is_authenticated %}
                 {% url 'public:profile' as profile_url %}
                 <li style="float:right">
