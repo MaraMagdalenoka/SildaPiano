@@ -16,10 +16,10 @@ body{
 
     padding:0px;
     margin:0px;
-    background-color: #b1c5d4;
+    background-color: #686573;
     list-style: none;
     box-sizing: border-box;
-
+    color: white;
 }
 
 .nav {

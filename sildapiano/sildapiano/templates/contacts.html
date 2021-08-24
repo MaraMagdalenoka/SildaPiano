@@ -1,8 +1,68 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
+<style>
+    .contacts {
+        text-align: center;
+    }
+    img {
+        height:180px;
+        width:180px;
+        border: 3px solid white;
+        background: white;
+        display: block;
+        margin: 20px auto 30px auto;
+        padding: 10px 10px;
+        border-radius: 10px;
+    }
+
+    h3 {
+        margin:0px;
+        padding:0px;
+    }
+
+    p {
+        margin:0px;
+        padding:0px;
+    }
+
+    .hr1 {
+        margin: 20px 200px 20px 200px;
+        border: solid white;
+        border-radius: 3px;
+    }
+</style>
+
 <body>
-    <h1 style="text-align:center">Kontakti</h1>
+<h1 style="text-align:center">Kontakti</h1>
+<div class="contacts">
+    <hr class="hr1"/>
+    <h3>Nodarbību norises vieta</h3>
+    <p>Rīga, Lokomotīves iela 44-34</p>
+    <p style="color: red; margin-top:10px;">UZMANĪBU! SUNS NODARBĪBU NORISES VIETĀ!</p>
+    <img src="{% static "images/location.jpeg" %}"/>
+    <hr class="hr1"/>
+    <h3>Transports</h3>
+    <p>15 trolejbuss - Pietura "Bultu iela"</p>
+    <p>18 autobuss - Pietura "Daugmale"</p>
+    <hr class="hr1"/>
+    <h3>Telefona numurs (arī WhatsApp)</h3>
+    <p>+371 28695373</p>
+    <hr class="hr1"/>
+    <h3>E-pasts</h3>
+    <p>silinda.gercane@gmail.com</p>
+    <hr class="hr1"/>
+    <h3>Konts norēķiniem (SwedBank)</h3>
+    <p style="margin-bottom: 40px">LV26HABA0551051214967</p>
+
+
+
+</div>
+
+
+
+
 </body>
 
 {% endblock %}
