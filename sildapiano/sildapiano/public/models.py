@@ -18,3 +18,10 @@ class LessonPlans(models.Model):
     description = models.CharField(max_length=300)
     number_of_lessons = models.IntegerField(null=False)
     price_for_all = models.FloatField()
+
+
+class LessonTimes(models.Model):
+    lesson_date = models.DateField()
+    lesson_time = models.TimeField()
+    lesson_status = models.BooleanField(null=False)
+

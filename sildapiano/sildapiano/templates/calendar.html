@@ -12,10 +12,34 @@
 <script>
       document.addEventListener('DOMContentLoaded', function() {
         var calendarEl = document.getElementById('calendar');
+
+
         var calendar = new FullCalendar.Calendar(calendarEl, {
-          initialView: 'dayGridMonth'
+            aspectRatio: 4,
+            headerToolbar: {
+              left: 'prev,next today',
+              center: 'title',
+              right: 'dayGridMonth,timeGridWeek'
+            },
+
+             events: [
+                   {% for lesson in lessons_time %}
+                    {% if lesson.lesson_status == 0 %}
+                           {
+                            title: '{{ lesson.lesson_time }}',
+                            start: '{{ lesson.lesson_date | date:"Y-m-d" }}',
+                            end: '{{ lesson.lesson_date | date:"Y-m-d" }}',
+                           },
+
+                    {% endif %}
+                   {% endfor %}
+               ],
+               eventColor: 'green',
+
         });
         calendar.render();
       });
-    </script>
+</script>
+
+
 {% endblock %}
