@@ -28,8 +28,8 @@ def about(request):
 
 
 def calendar(request):
-    lessons = Lessons.objects.all()
-    return render(request, "./calendar.html")
+    lessons_time = LessonTimes.objects.all()
+    return render(request, "./calendar.html", {"lessons_time": lessons_time})
 
 
 class ProfileView(LoginRequiredMixin, TemplateView):

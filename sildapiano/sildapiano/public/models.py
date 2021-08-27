@@ -36,3 +36,8 @@ class Lessons(models.Model):
     available = models.BooleanField(default=True)
     taken_by = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
     paid = models.BooleanField(default=False)
+
+class LessonTimes(models.Model):
+    lesson_date = models.DateField()
+    lesson_time = models.TimeField()
+    lesson_status = models.BooleanField(null=False)
