@@ -1,8 +1,74 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
 <body>
+<style>
+    p {
+        margin: 20px 300px 20px 300px;
+        text-align: center;
+    }
+
+    img {
+        object-fit: cover;
+        height: 200px;
+        border: 3px solid white;
+        background: white;
+        display: block;
+        margin: 20px auto 30px auto;
+        padding: 10px 10px;
+        border-radius: 10px;
+        }
+
+        .hr1 {
+        margin: 20px 300px 20px 300px;
+        border: solid white;
+        border-radius: 3px;
+    }
+
+</style>
+
+
     <h1 style="text-align:center">Par skolotāju</h1>
+<hr class="hr1"/>
+
+<p style="text-align:center">Hei! Es esmu Sīlinda Gercāne un, ja vēlies iepazīties ar mani tuvāk - turpini lasīt! :)</p>
+<hr class="hr1"/>
+
+<img src="{% static "images/silinda1.jpeg" %}"/>
+<hr class="hr1"/>
+
+<p>Esmu jauna mūziķe, kurai sirdslieta ir savas zināšanas nodot tālāk interesantā un aizraujošā veidā!
+2021.gada vasarā absolvēju Ventspils Mūzikas vidusskolu džeza un ritma mūzikas nodaļu kā pianiste/ansambļa vadītāja, taču 2014.gadā pabeidzu
+Saldus Mūzikas skolu kā klasiskā pianiste - tieši šo skolu dēļ varēšu palīdzēt apgūt dažādu žanru mūziku!</p>
+<hr class="hr1"/>
+
+<img src="{% static "images/silinda2.jpeg" %}"/>
+<hr class="hr1"/>
+
+<p>Man ir arī pieredze koncertēšanā - kopā ar Ventspils Bigbendu, kura dalībniece biju 3 gadus, uzstājāmies visdažādājakos koncertos. Sadarbojāmies ar Ralfu Eilandu, Aiju Andrejevu, Alex, Aiju Vītoliņu, Ivo Fominu, kā arī ar vairākiem ārzemju mūziķiem -
+dziedātājas Sofia Rubina, Susanna Aleksandra, trompetisti Jason Hunter, Gerhard Ornig, kā arī vēl daudzi mākslinieki no tālām
+un tuvām zemēm.</p>
+<hr class="hr1"/>
+
+<img src="{% static "images/orchestra.jpeg" %}"/>
+<hr class="hr1"/>
+
+<p>Esmu netikai spēlējusi citu sarakstīto mūziku, bet arī radījusi pati savējo - man ir vairākas dziesmas, kuras dažreiz tiek izpildītas
+sadarbojoties ar citiem mūziķiem. Esmu arī rakstījusi partijas stīgu trio, ritma sekcijai, tāpēc varēšu iepazīstināt ar
+    pamatiem dziesmu rakstīšanā, apstrādāšanā!</p>
+<hr class="hr1"/>
+
+<img src="{% static "images/bigband3.jpg" %}"/>
+<hr class="hr1"/>
+
+<p>Papildus mūzikas izpildīšanai uz klavierēm man patīk arī dziedāt gan koros, gan ansambļos, gan solo! Lai arī liela un profesionāla pieredze man šajā ziņā nav,
+    savu dziedātprasmi esmu parādījusi koncertos ar lielāka vai mazāka pavadošā sastāva palīdzību, kā arī regulāri priecēju cilvēkus
+viņu svētkos - kāzās, dzimšanās dienās, citās jubilejās un pasākumos!</p>
+<hr class="hr1"/>
+
+<img src="{% static "images/wedding.jpeg" %}"/>
+
 </body>
 
 {% endblock %}
