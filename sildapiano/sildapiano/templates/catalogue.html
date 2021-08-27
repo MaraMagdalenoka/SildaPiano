@@ -16,10 +16,13 @@
         height: 40px;
         width: 100px;
         margin: 20px auto 5px auto;
+        border-radius: 5px;
+        background-color: #d8b9aa;
     }
     button a{
         text-decoration:none;
         color: #686573;
+        font-weight: bold;
 
     }
     img {
@@ -42,7 +45,7 @@
     <h3 class="title">{{lesson.lesson_name }}</h3>
     <li>{{lesson.description }}</li>
     <li>{{lesson.price_for_all }} EUR</li>
-    <button><a href="#" class="btn btn-primary">Pasūtīt</a></button>
+    <button><a href="#">Rezervēt nodarbību</a></button>
 </div>
     {% endfor %}
 <hr class="hr1"/>
