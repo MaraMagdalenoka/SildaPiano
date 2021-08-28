@@ -10,7 +10,7 @@ class SignUpForm(UserCreationForm):
     phone_num = forms.CharField(label='Telefona numurs', max_length=100, required=True)
     birth_date = forms.DateField(label='Dzimšanas diena', required=False, help_text=
     'GGGG-MM-DD')
-    description = forms.CharField(label='Tavs raksturojums', max_length=1000, required=False,
+    description = forms.CharField(widget=forms.Textarea, label='Tavs raksturojums', max_length=1000, required=False,
                                   help_text='Pastāsti man par sevi, ja vēlies! :)')
 
     class Meta:

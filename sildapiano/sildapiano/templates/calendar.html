@@ -10,39 +10,65 @@
 <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.9.0/main.min.js"></script>
 
 
-<div id='calendar'></div>
+<div id='calendar' style="margin: 20px 100px 40px 100px"></div>
 <script>
+
+
       document.addEventListener('DOMContentLoaded', function() {
         var calendarEl = document.getElementById('calendar');
 
 
         var calendar = new FullCalendar.Calendar(calendarEl, {
+            eventClick: function(info) {
+              var eventObj = info.event;
 
-            aspectRatio: 4,
+              if (eventObj.url) {
+                alert(
+                  'Clicked ' + eventObj.title + '.\n' +
+                  'Will open ' + eventObj.url + ' in a new tab'
+                );
+
+                window.open(eventObj.url);
+
+                info.jsEvent.preventDefault(); // prevents browser from following link in current tab.
+              } else {
+                alert('Clicked ' + eventObj.title);
+              }
+            },
+
+            aspectRatio: 2,
             headerToolbar: {
               left: 'prev,next today',
               center: 'title',
               right: 'dayGridMonth'
             },
-
-             events: [
+            firstDay: 1,
+            events: [
                    {% for lesson in lessons_time %}
                     {% if lesson.lesson_status == 0 %}
                            {
                             title: '{{ lesson.lesson_time }}',
                             start: '{{ lesson.lesson_date | date:"Y-m-d" }}',
                             end: '{{ lesson.lesson_date | date:"Y-m-d" }}',
+                            url: 'https://www.google.com/'
                            },
-
                     {% endif %}
                    {% endfor %}
                ],
-               eventColor: 'green',
+               eventColor: '#d6d7dc',
+               eventTextColor: '#3a3647',
+               eventTimeFormat: {
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit',
+                meridiem: false
+              }
 
-        });
+           });
+
         calendar.render();
       });
 </script>
-<a href="#" class="btn btn-primary">Pasūtīt</a>
+<a style="text-align:center">Lai rezervētu konkrētu nodarbību laiku, spied "Rezervēt nodarbību" un izvēlies sev vēlamo komplektu! :)</a>
 
 {% endblock %}
