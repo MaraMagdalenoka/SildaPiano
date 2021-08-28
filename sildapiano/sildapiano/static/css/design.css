@@ -11,15 +11,18 @@
     border-radius: 12px;
 }
 
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
 
 body{
-
     padding:0px;
     margin:0px;
     background-color: #686573;
     list-style: none;
     box-sizing: border-box;
     color: white;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .nav {
@@ -53,10 +56,10 @@ li.logo{
     display:block;
     padding:15px;
     font-size:17px;
-    transition: 0.5s;
+    transition: 0s;
 }
 
 .middle a:hover:not(.logo){
     background: #686573;
-    transition: 0.5s;
+    transition: 0s;
 }

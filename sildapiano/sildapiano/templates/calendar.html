@@ -3,20 +3,19 @@
 {% block content %}
 <body>
     <h1 style="text-align:center">Pieejamie nodarbību laiki</h1>
+<h3 style="text-align:center; font-weight:bold; margin: 20px auto 0px auto;">Lai rezervētu nodarbību, uzkilšķini uz tās!</h3>
+<p style="text-align:center; margin: 0px auto 20px auto;">(Nepieciešama reģistrācija vai autorizācija)</p>
 </body>
 <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.9.0/main.min.css"/>
 
 
 <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.9.0/main.min.js"></script>
-
-
 <div id='calendar' style="margin: 20px 100px 40px 100px"></div>
+
+{% if user.is_authenticated %}
 <script>
-
-
       document.addEventListener('DOMContentLoaded', function() {
         var calendarEl = document.getElementById('calendar');
-
 
         var calendar = new FullCalendar.Calendar(calendarEl, {
             eventClick: function(info) {
@@ -24,13 +23,10 @@
 
               if (eventObj.url) {
                 alert(
-                  'Clicked ' + eventObj.title + '.\n' +
-                  'Will open ' + eventObj.url + ' in a new tab'
+                  'Izvēlēts ' + eventObj.title + '.\n' +
+                  'Turpināt uz apmaksu?'
                 );
-
-                window.open(eventObj.url);
-
-                info.jsEvent.preventDefault(); // prevents browser from following link in current tab.
+                window.open(eventObj.url,"_top");
               } else {
                 alert('Clicked ' + eventObj.title);
               }
@@ -50,25 +46,67 @@
                             title: '{{ lesson.lesson_time }}',
                             start: '{{ lesson.lesson_date | date:"Y-m-d" }}',
                             end: '{{ lesson.lesson_date | date:"Y-m-d" }}',
-                            url: 'https://www.google.com/'
+                            url: '{% url 'public:payment' %}'
                            },
                     {% endif %}
                    {% endfor %}
                ],
-               eventColor: '#d6d7dc',
-               eventTextColor: '#3a3647',
-               eventTimeFormat: {
+            eventColor: '#d6d7dc',
+            eventTextColor: '#3a3647',
+            eventTimeFormat: {
                 hour: '2-digit',
                 minute: '2-digit',
                 second: '2-digit',
                 meridiem: false
-              }
+            }
 
            });
 
         calendar.render();
       });
 </script>
-<a style="text-align:center">Lai rezervētu konkrētu nodarbību laiku, spied "Rezervēt nodarbību" un izvēlies sev vēlamo komplektu! :)</a>
+
+{% else %}
+
+<script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var calendarEl = document.getElementById('calendar');
+
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+            aspectRatio: 2,
+            headerToolbar: {
+              left: 'prev,next today',
+              center: 'title',
+              right: 'dayGridMonth'
+            },
+            firstDay: 1,
+            events: [
+                   {% for lesson in lessons_time %}
+                    {% if lesson.lesson_status == 0 %}
+                           {
+                            title: '{{ lesson.lesson_time }}',
+                            start: '{{ lesson.lesson_date | date:"Y-m-d" }}',
+                            end: '{{ lesson.lesson_date | date:"Y-m-d" }}',
+                           },
+                    {% endif %}
+                   {% endfor %}
+               ],
+            eventColor: '#d6d7dc',
+            eventTextColor: '#3a3647',
+            eventTimeFormat: {
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit',
+                meridiem: false
+            }
+
+           });
+
+        calendar.render();
+      });
+</script>
+
+{% endif %}
+
 
 {% endblock %}

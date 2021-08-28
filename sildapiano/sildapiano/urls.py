@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-    path("", include("sildapiano.public.urls")),
+    path("", include("sildapiano.public.urls", namespace="public2")),
     path("admin/", admin.site.urls),
-    path("accounts/", include("sildapiano.public.urls")),
+    path("accounts/", include("sildapiano.public.urls", namespace="accounts")),
 ]
