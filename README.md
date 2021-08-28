@@ -22,3 +22,10 @@ We hope that soon this webpage will be used not only for reservation, but also a
 - https://docs.djangoproject.com/en/3.2/
 # Requirements for installation
 [Requirements (.txt file)](requirements.txt)
+
+# Homepage
+![README image1](https://user-images.githubusercontent.com/78618418/131230309-27ed5f17-f344-4e0e-b7e1-939deeca0f18.JPG)
+# Catalogue page
+![README image2](https://user-images.githubusercontent.com/78618418/131230312-a0b7c3af-68a2-497c-b35e-6323ef88ba18.JPG)
+# Calendar page
+![README image3](https://user-images.githubusercontent.com/78618418/131230315-8342eaf1-90f1-4854-8157-d0bc2c35d8b2.JPG)
