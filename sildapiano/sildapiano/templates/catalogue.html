@@ -1,23 +1,44 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
+<style>
+    .card {
+        text-align: center;
+    }
+
+    .hr1 {
+        margin: 20px 300px 20px 300px;
+        border: solid white;
+        border-radius: 3px;
+    }
+    button {
+        height: 50px;
+        width: 150px;
+        margin: 15px 45% 15px 45%;
+        border-radius: 5px;
+        background-color: #d8b9aa;
+    }
+    button a{
+        text-decoration:none;
+        color: #686573;
+        font-weight: bold;
+    }
+</style>
+
 <body>
-    <h1 style="text-align:center">Nodarbības</h1>
-
+    <h1 style="text-align:center">Katalogs</h1>
 {% for lesson in lessons_info %}
-    <div class="card">
-  <div class="card-body">
-    <h2 class="card-title"><strong>{{lesson.lesson_name }}</strong></h2>
-    <p class="card-text">
-      <li>{{lesson.description }}</li>
-      <li>Cena: {{lesson.price_for_all }} EUR</li>
-      </p>
-    <a href="#" class="btn btn-primary">Pasūtīt</a>
-  </div>
+<div class="card">
+    <hr class="hr1"/>
+    <h3 class="title">{{lesson.lesson_name }}</h3>
+    <li>{{lesson.description }}</li>
+    <li>{{lesson.price_for_all }} EUR</li>
 </div>
-
     {% endfor %}
 
+<hr class="hr1"/>
+    <button><a href="{% url 'public:calendar' %}">Rezervēt nodarbību</a></button>
 </body>
 
 {% endblock %}

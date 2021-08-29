@@ -2,11 +2,27 @@
 
 {% block content %}
 <body>
+<style>
+button {
+    border:none;
+    border-radius:10px;
+    padding: 1%;
+    width: 20%;
+    cursor: pointer;
+    background: #71879a;
+    color: white;
+    margin-bottom: 40px;
+  }
+
+</style>
+
+
 <h1 style="text-align:center">Ienākt</h1>
-<form method="post">
+<form method="post" style="text-align: center">
     {% csrf_token %}
     {{form.as_p}}
     <button type="submit">Ienākt</button>
+
 </form>
 
 </body>

@@ -2,7 +2,21 @@
 
 {% block content %}
 <body>
-    <h1 style="text-align:center"> {{ user.username }} profils</h1>
+<style>
+
+    .li1 {
+        text-align:center;
+        margin: 20px auto 20px auto;
+    }
+</style>
+
+<h1 style="text-align:center"> {{ user.first_name }} profils</h1>
+    <li class="li1"><b>Vārds, uzvārds:</b><br> {{user.first_name}} {{user.last_name}}</li>
+<li class="li1"><b>Lietotāja vārds:</b><br>{{user.username}}</li>
+<li class="li1"><b>E-pasts:</b><br> {{user.email}}</li>
+<li class="li1"><b>Telefona numurs:</b><br> {{user.profile.phone_num}}</li>
+<li class="li1"><b>Dzimšanas diena:</b><br> {{user.profile.birth_date}}</li>
+<li class="li1"><b>Raksturojums:</b><br> {{user.profile.description}}</li>
 </body>
 
 {% endblock %}

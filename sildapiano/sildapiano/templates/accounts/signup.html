@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block content %}
+<body>
+<style>
+  p {
+      margin: 20px auto 20px auto;
+  }
+  small {
+     color: white;
+     text-align: center;
+  }
+
+  button {
+    border:none;
+    border-radius:10px;
+    padding: 1%;
+    width: 20%;
+    cursor: pointer;
+    background: #71879a;
+    color: white;
+    margin-bottom: 40px;
+  }
+
+  form {
+     text-align: center;
+  }
+
+</style>
+
+  <h2 style="text-align: center">Pieteikties</h2>
+  <form method="post">
+    {% csrf_token %}
+    {% for field in form %}
+      <p>
+        {{ field.label_tag }}<br>
+        {{ field }}<br>
+          {% if field.help_text %}
+          <small>{{ field.help_text }}</small>
+          {% endif %}
+        {% for error in field.errors %}
+          <p style="color: red">{{ error }}</p>
+        {% endfor %}
+      </p>
+    {% endfor %}
+    <button type="submit">Pieteikties</button>
+  </form>
+</body>
+{% endblock %}
