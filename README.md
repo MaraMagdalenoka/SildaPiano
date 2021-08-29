@@ -7,10 +7,10 @@ Webpage for potential students who would like to learn how to play piano in a fu
 - Calendar - graphic information about available lesson times (also for lesson reservation)
 - SignUp and LogIn pages - self-explanatory
 - Profile page - in case you forget your name
-# Usage
-This webpage has two main usages:
-- for getting information about lessons
-- for private lesson reservation
+# Main usages
+- for getting information about lessons (available now)
+- for getting information about available lesson times (available now)
+- for private lesson reservation (coming soon)
 # Used technologies
 Along with python we used Django, HTML, CSS, JavaScript and FullCalendar
 # Authors and their motivation
@@ -21,7 +21,7 @@ We hope that soon this webpage will be used not only for reservation, but also a
 - https://fullcalendar.io/
 - https://docs.djangoproject.com/en/3.2/
 # Requirements for installation
-[Requirements (.txt file)](requirements.txt)
+- [Requirements (.txt file)](requirements.txt)
 
 # Homepage
 ![README image1](https://user-images.githubusercontent.com/78618418/131230309-27ed5f17-f344-4e0e-b7e1-939deeca0f18.JPG)
